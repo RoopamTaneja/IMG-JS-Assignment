@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form class="form-box">
+                <div class="heading">
+                    <h3>SignUp Form</h3>
+                </div>
+                <div>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div>
+                    <input type="text" class="age" onkeyup="ageCheck(this.value)" placeholder="Age">
+                    <span>
+                        <p id="age-error-message">Wrong format</p>
+                    </span>
+                </div>
+                <div>
+                    <select name="gen" id="gen">
+                        <option value="no-value">Gender</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                        <option value="o">Others</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="text" class="phone" onkeyup="phoneCheck(this.value)" placeholder="Phone number">
+                    <span>
+                        <p id="ph-error-message">Wrong format</p>
+                    </span>
+                </div>
+                <div>
+                    <input type="text" placeholder="City">
+                </div>
+                <div>
+                    <input class="email" type="text" onkeyup="emailCheck(this.value)" placeholder="Email address">
+                    <span>
+                        <p id="email-error-message">Wrong format</p>
+                    </span>
+                </div>
+                <div>
+                    <input type="password" id="entpass" placeholder="Enter Password">
+                </div>
+                <div>
+                    <input type="password" id="confpass" onkeyup="passCheck(this.value)" placeholder="Confirm Password">
+                    <span>
+                        <p id="pass-error-message">Passwords don't match</p>
+                    </span>
+                </div>
+                <div>
+                    <select name="edu" id="edu">
+                        <option value="no-value">Edu Qualifications</option>
+                        <option value="10">Class 10</option>
+                        <option value="12">Class 12</option>
+                        <option value="ug">Graduation</option>
+                        <option value="pg">Post-graduation</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+                <button class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

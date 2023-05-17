@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    padding: 20px;
+    background-color: antiquewhite;
+    gap: 10px 0;
+}
+
+.heading {
+    text-align: center;
+}

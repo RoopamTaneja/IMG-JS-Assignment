@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    padding: 50px 30px;
+    background-color: antiquewhite;
+    gap: 10px 0;
+}
+
+.heading {
+    text-align: center;
+}
+
+.age {
+    max-width: 30%;
+}
+
+.btn {
+    align-self: flex-end;
+}
+
+#email-error-message {
+    display: none;
+    color: red;
+}
+
+#ph-error-message {
+    display: none;
+    color: red;
+}
+
+#age-error-message {
+    display: none;
+    color: red;
+}
+
+#pass-error-message {
+    display: none;
+    color: red;
+}
+
+input {
+    padding: 4px;
+}
+
+select {
+    padding: 2px;
+}
+
+button {
+    padding: 4px;
+}
