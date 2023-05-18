@@ -1,3 +1,5 @@
+// Error handling : 
+
 function emailCheck(data) {
     let check = new RegExp(/^\w+@[a-z]{2,}\.([a-z]{3}|[a-z]{2}\.[a-z]{2})$/);
     let errorMessage = document.querySelector('#email-error-message');
@@ -32,3 +34,5 @@ function passCheck() {
         errorMessage.style.display = 'inline';
     }
 }
+
+// Fetch API

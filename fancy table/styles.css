@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.heading {
+    color: rgba(23, 11, 117, 0.797);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid blue;
+    width: 600px;
+    padding: 50px 30px;
+    background-color: antiquewhite;
+    gap: 10px 0;
+}
+
+.table-box {
+    max-width: 100%;
+}
+
+th,
+td {
+    border: 2px solid black;
+    padding: 4px
+}
+
+img {
+    width: 80px;
+}
