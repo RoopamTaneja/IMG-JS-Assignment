@@ -12,18 +12,18 @@
 <body>
     <div class="container">
         <div>
-            <form class="form-box">
+            <form class="form-box" id="myForm">
                 <div class="heading">
                     <h1>Sign In</h1>
                 </div>
                 <div>
-                    <input class="email" type="text" onkeyup="emailCheck(this.value)" placeholder="Email address">
+                    <input name = "email" class="email" type="text" onkeyup="emailCheck(this.value)" placeholder="Email address">
                     <span>
                         <p id="email-error-message">Wrong format</p>
                     </span>
                 </div>
                 <div>
-                    <input type="password" id="entpass" placeholder="Enter Password">
+                    <input type="password" name ="password" id="entpass" placeholder="Enter Password">
                 </div>
                 <div>
                     <input type="password" id="confpass" onkeyup="passCheck(this.value)" placeholder="Confirm Password">
@@ -31,7 +31,7 @@
                         <p id="pass-error-message">Passwords don't match</p>
                     </span>
                 </div>
-                <button class="btn">Enter</button>
+                <button type="submit" class="btn">Enter</button>
             </form>
         </div>
     </div>
