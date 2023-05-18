@@ -94,3 +94,7 @@ function passCheck() {
         errorMessage.style.display = 'inline';
     }
 }
+
+document.querySelector('.form-box').addEventListener('submit', () => {
+    alert("Signed Up successfully");
+})
