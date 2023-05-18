@@ -37,8 +37,65 @@ function passCheck() {
 
 // Fetch API:
 
+//4. a) : POST request using Fetch API:
 
-//testing : 
+// const myForm = document.getElementById('myForm');
+// myForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const email = document.querySelector('.email').value;
+//     const password = document.querySelector('#entpass').value;
+//     const data = { email, password };
+//     const options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     };
+//     let p = fetch('https://reqres.in/api/login', options)
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             console.log(data);
+//         })
+//         .catch((error) => {
+//             console.log(error);
+//         })
+// })
+
+//4. b) : Using async-await:
+
+async function fetch_post(src, options) {
+    return ((await fetch(src, options)).json());
+}
+
+myForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.querySelector('.email').value;
+    const password = document.querySelector('#entpass').value;
+    const data = { email, password };
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    try {
+        response = await fetch_post('https://reqres.in/api/login', options);
+    } catch (err) {
+        console.log("Error! : " + err);
+    }
+    console.log(response);
+    
+})
+
+
+
+
+
+//testing :
 // let p = fetch('https://reqres.in/api/login', {
 //     method: 'POST',
 //     headers: {
@@ -56,26 +113,11 @@ function passCheck() {
 //         console.log(error);
 //     })
 
-const myForm = document.getElementById('myForm');
-myForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.querySelector('.email').value;
-    const password = document.querySelector('#entpass').value;
-    const data = { email, password };
-    let p = fetch('https://reqres.in/api/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-})
+
+// let tableData = "";
+    // for (let value of response.data) {
+    //     //of not in and use obj_data.data bcoz the objects are in data property of obj_data
+    //     tableData += `<tr> <td>${value.id}</td> <td>${value.name}</td> <td>${value.year}</td> <td>${value.color}</td>  <td>${value.pantone_value}</td> </tr>`;
+    //     //remember backticks and no single quotes
+    //     document.getElementById('table_body').innerHTML = tableData;
+    // }
