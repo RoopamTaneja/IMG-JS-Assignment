@@ -15,11 +15,11 @@ function emailCheck(data) {
 let entered_password = document.querySelector('#entpass');
 let conf_password = document.querySelector('#confpass');
 
-entered_password.addEventListener('onkeyup', () => {
+entered_password.addEventListener('keyup', () => {
     passCheck();
 })
 
-conf_password.addEventListener('onkeyup', () => {
+conf_password.addEventListener('keyup', () => {
     passCheck();
 })
 
@@ -38,6 +38,7 @@ function passCheck() {
 // Fetch API:
 const myForm = document.getElementById('myForm');
 
+//Two Approaches : 
 
 //4. a) : POST request using Fetch API:
 

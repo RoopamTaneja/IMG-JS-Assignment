@@ -52,6 +52,21 @@
     color: red;
 }
 
+#pass-format-error-message {
+    display: none;
+    color: red;
+}
+
+#name-error-message {
+    display: none;
+    color: red;
+}
+
+#city-error-message {
+    display: none;
+    color: red;
+}
+
 input {
     padding: 4px;
 }
@@ -62,4 +77,8 @@ select {
 
 button {
     padding: 4px;
+}
+
+.info {
+    color: green;
 }

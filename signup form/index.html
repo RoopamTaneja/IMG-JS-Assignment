@@ -17,9 +17,11 @@
                     <h2>SignUp Form</h2>
                 </div>
                 <div>
-                    <input type="text" placeholder="Name">
+                    <input type="text" onkeyup="nameCheck(this.value)" placeholder="Name">
+                    <span>
+                        <p id="name-error-message">Wrong format</p>
+                    </span>
                 </div>
-
                 <div>
                     <input type="text" class="age" onkeyup="ageCheck(this.value)" placeholder="Age">
                     <span>
@@ -34,7 +36,6 @@
                         <option value="o">Others</option>
                     </select>
                 </div>
-
                 <div>
                     <input type="text" class="phone" onkeyup="phoneCheck(this.value)" placeholder="Phone number">
                     <span>
@@ -42,7 +43,10 @@
                     </span>
                 </div>
                 <div>
-                    <input type="text" placeholder="City">
+                    <input type="text" onkeyup="cityCheck(this.value)" placeholder="City">
+                    <span>
+                        <p id="city-error-message">Wrong format</p>
+                    </span>
                 </div>
                 <div>
                     <input class="email" type="text" onkeyup="emailCheck(this.value)" placeholder="Email address">
@@ -51,10 +55,13 @@
                     </span>
                 </div>
                 <div>
-                    <input type="password" id="entpass" placeholder="Enter Password">
+                    <input type="password" id="entpass" onkeyup="passFormat(this.value)" placeholder="Enter Password">
+                    <span>
+                        <p id="pass-format-error-message">Wrong format</p>
+                    </span>
                 </div>
                 <div>
-                    <input type="password" id="confpass" onkeyup="passCheck(this.value)" placeholder="Confirm Password">
+                    <input type="password" id="confpass" placeholder="Confirm Password">
                     <span>
                         <p id="pass-error-message">Passwords don't match</p>
                     </span>
@@ -70,6 +77,10 @@
                     </select>
                 </div>
                 <button class="btn">Submit</button>
+                <div class="info">
+                    <p>*Password should have atleast 8 characters including atleast 1 uppercase, 1 lowercase, 1 numeric
+                        and 1 spl character (restricted to : #_.*@!$&^)</p>
+                </div>
             </form>
         </div>
     </div>
