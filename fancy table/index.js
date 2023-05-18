@@ -4,6 +4,7 @@ p.then((value) => {
     return value.json();//converted to obj
 })
     .then((obj_data) => {
+        console.log(obj_data);
         let tableData = "";
         for (let value of obj_data.data) {
             //of not in and use obj_data.data bcoz the objects are in data property of obj_data

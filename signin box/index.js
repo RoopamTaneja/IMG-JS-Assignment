@@ -36,10 +36,11 @@ function passCheck() {
 }
 
 // Fetch API:
+const myForm = document.getElementById('myForm');
+
 
 //4. a) : POST request using Fetch API:
 
-// const myForm = document.getElementById('myForm');
 // myForm.addEventListener('submit', (e) => {
 //     e.preventDefault();
 //     const email = document.querySelector('.email').value;
@@ -52,72 +53,82 @@ function passCheck() {
 //         },
 //         body: JSON.stringify(data)
 //     };
+
 //     let p = fetch('https://reqres.in/api/login', options)
-//         .then((res) => {
-//             return res.json();
+//         .then((res) => { return res.json(); })
+//         .then(data => {
+//             const token = data.token;
+//             fetch('https://reqres.in/api/login', {
+//                 headers: {
+//                     'Authorization': `Bearer ${token}`
+//                 }
+//             })
+//                 .then((repi) => {
+//                     return repi.json();
+//                 })
+//                 .then(userData => {
+//                     console.log(userData);
+//                     document.querySelector('.box').style.display = 'block';
+//                     document.querySelector('.signinbox').style.display = 'none';
+//                     let tableData = "";
+//                     for (let value of userData.data) {
+//                         //of not in and use obj_data.data bcoz the objects are in data property of obj_data
+//                         tableData += `<tr> <td>${value.id}</td> <td>${value.name}</td> <td>${value.year}</td> <td>${value.color}</td>  <td>${value.pantone_value}</td> </tr>`;
+//                         //remember backticks and no single quotes
+//                         document.getElementById('table_body').innerHTML = tableData;
+//                     }
+//                 })
+//                 .catch(error => {
+//                     console.error('Error fetching user data:', error);
+//                 })
 //         })
-//         .then((data) => {
-//             console.log(data);
-//         })
-//         .catch((error) => {
-//             console.log(error);
+//         .catch(error => {
+//             console.error('Error! :', error);
 //         })
 // })
 
 //4. b) : Using async-await:
 
-async function fetch_post(src, options) {
-    return ((await fetch(src, options)).json());
-}
+// async function fetch_post(src, options) {
+//     return ((await fetch(src, options)).json());
+// }
 
-myForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.querySelector('.email').value;
-    const password = document.querySelector('#entpass').value;
-    const data = { email, password };
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    };
-    try {
-        response = await fetch_post('https://reqres.in/api/login', options);
-    } catch (err) {
-        console.log("Error! : " + err);
-    }
-    console.log(response);
-    
-})
+// myForm.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const email = document.querySelector('.email').value;
+//     const password = document.querySelector('#entpass').value;
+//     const data = { email, password };
+//     const options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     };
+//     try {
+//         resp = await fetch_post('https://reqres.in/api/login', options);
+//     } catch (err) {
+//         console.log("Error! : " + err);
+//     }
+//     try {
+//         const token = resp.token;
+//         userData = await fetch_post('https://reqres.in/api/login', {
+//             headers: {
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         })
+//         console.log(userData);
+//         document.querySelector('.box').style.display = 'block';
+//         document.querySelector('.signinbox').style.display = 'none';
+//         let tableData = "";
+//         for (let value of userData.data) {
+//             //of not in and use obj_data.data bcoz the objects are in data property of obj_data
+//             tableData += `<tr> <td>${value.id}</td> <td>${value.name}</td> <td>${value.year}</td> <td>${value.color}</td>  <td>${value.pantone_value}</td> </tr>`;
+//             //remember backticks and no single quotes
+//             document.getElementById('table_body').innerHTML = tableData;
+//         }
 
-
-
-
-
-//testing :
-// let p = fetch('https://reqres.in/api/login', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({ "email": "eve.holt@reqres.in", "password": "cityslicka" })
-// });
-// p.then((res) => {
-//     return res.json();
+//     } catch (error) {
+//         console.error('Error fetching user data:', error);
+//     }
 // })
-//     .then((data) => {
-//         console.log(data);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     })
-
-
-// let tableData = "";
-    // for (let value of response.data) {
-    //     //of not in and use obj_data.data bcoz the objects are in data property of obj_data
-    //     tableData += `<tr> <td>${value.id}</td> <td>${value.name}</td> <td>${value.year}</td> <td>${value.color}</td>  <td>${value.pantone_value}</td> </tr>`;
-    //     //remember backticks and no single quotes
-    //     document.getElementById('table_body').innerHTML = tableData;
-    // }

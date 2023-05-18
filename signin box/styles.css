@@ -52,7 +52,7 @@ button {
     padding: 4px;
 }
 
-/* .box {
+.box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +61,10 @@ button {
     padding: 50px 30px;
     background-color: antiquewhite;
     gap: 10px 0;
+}
+
+table {
+    margin: 0 auto;
 }
 
 .table-box {
@@ -73,6 +77,6 @@ td {
     padding: 4px
 }
 
-img {
-    width: 80px;
-} */
+.box {
+    display: none;
+}
